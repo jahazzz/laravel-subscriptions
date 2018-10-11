@@ -60,7 +60,7 @@ class SubscriptionsServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Load migrations
-        ! $this->app->runningInConsole() || $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
+        //! $this->app->runningInConsole() || $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
 
         // Publish Resources
         ! $this->app->runningInConsole() || $this->publishResources();
@@ -74,7 +74,7 @@ class SubscriptionsServiceProvider extends ServiceProvider
     protected function publishResources(): void
     {
         $this->publishes([realpath(__DIR__.'/../../config/config.php') => config_path('rinvex.subscriptions.php')], 'rinvex-subscriptions-config');
-        $this->publishes([realpath(__DIR__.'/../../database/migrations') => database_path('migrations')], 'rinvex-subscriptions-migrations');
+        //$this->publishes([realpath(__DIR__.'/../../database/migrations') => database_path('migrations')], 'rinvex-subscriptions-migrations');
     }
 
     /**
